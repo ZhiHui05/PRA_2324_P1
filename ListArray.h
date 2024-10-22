@@ -56,7 +56,93 @@ class ListArray : public List<T>{
 	return out;
 	}
 
+	void insert(int pos,T e) override{
+		 if (pos < 0 || pos > n) {
+			 throw std::out_of_range("La posición está fuera del rango.");
+		 }
+// Desplaza los elementos a la derecha para hacer espacio
+        for (int i = n; i > pos; --i) {
+            arr[i] = arr[i - 1];
+        }
 
+        // Inserta el nuevo elemento en la posición pos
+        arr[pos] = e;
+
+        // Incrementa el número actual de elementos
+        ++n;
+
+	}
+//=========================================
+	void append(T e) override{
+		arr[n]= e;
+		n++;	
+	}
+
+//=========================================
+	void prepend(T e) override{
+       // Desplaza los elementos a la derecha para hacer espacio al principio
+        for (int i = n; i > 0; --i) {
+            arr[i] = arr[i - 1];
+        }
+
+        // Inserta el nuevo elemento en la primera posición (índice 0)
+        arr[0] = e;
+
+        // Incrementa el número actual de elementos
+        ++n;	
+	}
+//=========================================
+	T remove(int pos) override{
+	if ( 0 > pos || pos >n-1){
+	throw std::out_of_range("POSICION fuera de rango ");
+	}	
+	// Guarda el elemento a eliminar
+        T removedElement = arr[pos];
+
+        // Desplaza los elementos a la izquierda para llenar el hueco
+        for (int i = pos; i < n - 1; ++i) {
+            arr[i] = arr[i + 1];
+        }
+
+        // Decrementa el número de elementos
+        n--;
+
+        // Devuelve el elemento eliminado
+        return removedElement;
+	}
+//=========================================
+
+	T get(int pos) override{
+	if (pos < 0 || pos >= n) {
+            throw std::out_of_range("La posición está fuera del rango.");
+        }
+	T get = arr[pos];
+	
+	return get;	
+	}
+//=========================================
+
+	int search(T e) override{
+	for(int i =0; i< n;i++){
+	if(arr[i] == e){
+	return e;
+	}
+	}
+	return -1;
+	}
+//=========================================
+
+	bool empty(){
+
+	return n==0;
+	}
+//========================================
+
+	int size(){
+	
+	return n;
+	}
+//=======================================
 };
 
 
