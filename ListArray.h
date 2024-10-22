@@ -132,13 +132,13 @@ class ListArray : public List<T>{
 	}
 //=========================================
 
-	bool empty(){
+	bool empty() override{
 
 	return n==0;
 	}
 //========================================
 
-	int size(){
+	int size() override{
 	
 	return n;
 	}
