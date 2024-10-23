@@ -112,7 +112,7 @@ class ListArray : public List<T>{
 	}
 //=========================================
 
-	T get(int pos) {
+	T get(int pos) const override {
 	if (pos < 0 || pos >= n) {
             throw std::out_of_range("La posición está fuera del rango.");
         }
@@ -122,7 +122,7 @@ class ListArray : public List<T>{
 	}
 //=========================================
 
-	int search(T e) {
+	int search(T e) const override {
 	for(int i =0; i< n;i++){
 	if(arr[i] == e){
 	return e;
@@ -132,13 +132,13 @@ class ListArray : public List<T>{
 	}
 //=========================================
 
-	bool empty() {
+	bool empty() const override{
 
 	return n==0;
 	}
 //========================================
 
-	int size(){
+	int size() const override{
 	
 	return n;
 	}
