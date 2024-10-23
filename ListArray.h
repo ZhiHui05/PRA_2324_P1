@@ -1,6 +1,6 @@
 #include <ostream>
 #include "List.h"
-
+//prueba
 template <typename T>
 class ListArray : public List<T>{
 
