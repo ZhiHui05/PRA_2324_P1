@@ -33,7 +33,7 @@ class ListArray : public List<T>{
 	
 	//COnstructor defecto
 	ListArray(){
-	static const int MINSIZE;
+	static const int MINSIZE = 10;
 	max = MINSIZE;
 	arr = new T[max];
 	n =0;
