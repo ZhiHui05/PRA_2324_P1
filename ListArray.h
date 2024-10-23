@@ -126,7 +126,7 @@ class ListArray : public List<T>{
 	int search(T e) const override {
 	for(int i =0; i< n;i++){
 	if(arr[i] == e){
-	return e;
+	return i;
 	}
 	}
 	return -1;
