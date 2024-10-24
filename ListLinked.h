@@ -51,7 +51,7 @@
        		 return current->data;  // Devolvemos dato en la posición pos
 		}
 	
-	friend std::ostream& operator<<(std::ostream& out, const ListLinked<T>& list);
+
 
 //===================================================================================
 
@@ -147,14 +147,17 @@
 		return -1;
     	
 	}
+	
 
+	template <typename U>
+		friend std::ostream& operator<< (std::ostream& out, const ListLinked<U>& list);
 
 
 };
 
-		template<typename T>
-   	 	std::ostream& operator<<(std::ostream& out, const ListLinked<T>& list) {
-        	Node<T>* current = list.first;
+		template<typename U>
+   	 	std::ostream& operator<<(std::ostream& out, const ListLinked<U>& list) {
+        	Node<U>* current = list.first;
         	while (current != nullptr) {
             	out << current->data;    // Imprime el dato del nodo actual
             	if (current->next != nullptr) {
