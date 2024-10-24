@@ -46,7 +46,6 @@
 	
 	friend std::ostream& operator<<(std::ostream& out, const ListLinked<T>& list);
 
-
 	};
 
 		template<typename T>
