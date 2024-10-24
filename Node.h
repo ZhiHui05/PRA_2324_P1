@@ -7,7 +7,7 @@ class Node {
 	Node<T>* next;
 //Sin terminar
 	//Constructor con argumento opcional para next(inicializado a nullptr)
-	Node(T data,Node<T>* next=nullptr): datat(data), next(next){
+	Node(T data,Node<T>* next=nullptr): data(data), next(next){
 	}
 //=========================================ç
 
