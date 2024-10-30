@@ -15,11 +15,11 @@ class Point2D{
 		static double distance(const Point2D &a, const Point2D &b);
 //========================================
 		// EL operator== nos dice que vamos hacer una comparacion entre los dos Point2D 
-		bool operator==(const Point2D &b);
+		bool operator==(const Point2D &b) const;
 //===================================
 
 		//Ahora una funcion similar pero nos comprueba si los dos puntos son diferentes
-		bool operator!=(const Point2D &b);
+		bool operator!=(const Point2D &b) const;
 
 //===================================
 		friend std::ostream& operator<<(std::ostream &out, const Point2D &p);

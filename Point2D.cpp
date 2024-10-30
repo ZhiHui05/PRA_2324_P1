@@ -1,17 +1,17 @@
 #include"Point2D.h"
 #include<iostream>
-
+#include<cmath>
 
 
 
 //COnstructor
-                Point2D(double x, double y){
+		Point2D::Point2D(double x, double y){
                 this->x=x;
                 this->y=y;
                 }
 //======================================
 
-                static double distance(const Point2D &a, const Point2D &b){
+                double Point2D::distance(const Point2D &a, const Point2D &b){
                 double disnt = 0;
                 double dx = a.x - b.x;
                 double dy = a.y - a.y;
@@ -22,7 +22,7 @@
                 }
 //========================================
                 // EL operator== nos dice que vamos hacer una comparacion entre los dos Point2D
-                bool operator==(const Point2D &b) const {
+                bool Point2D::operator==(const Point2D &b) const {
                 //Si son iguales nos devolvera TRUE, en caso contrario FALSE
                 //para llamar al operador se llamara de a==b
                 return ((this->x == b.x ) && ( this->y == b.y) );
@@ -31,12 +31,12 @@
 //===================================
 
                 //Ahora una funcion similar pero nos comprueba si los dos puntos son diferentes
-                bool operator!=(const Point2D &b) const {
-                return ((this->x != b.x) && (this->y != b.y));
+                bool Point2D::operator!=(const Point2D &b) const {
+                return ((this->x != b.x) || (this->y != b.y));
                 }
 
 //===================================
-		friend std::ostream& operator<<(std::ostream &out, const Point2D &p){
+		std::ostream& operator<<(std::ostream &out, const Point2D &p){
 
                 out << "(" <<p.x <<" , " << p.y << ")";
                 return out;
