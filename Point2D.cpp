@@ -1,7 +1,7 @@
 #include"Point2D.h"
 #include<iostream>
 #include<cmath>
-
+#include<iomanip>
 
 
 //COnstructor
@@ -11,13 +11,11 @@
                 }
 //======================================
 
-                double Point2D::distance(const Point2D &a, const Point2D &b){
-                double disnt = 0;
+                double Point2D::distance(const Point2D &a,const Point2D &b){
+              
                 double dx = a.x - b.x;
-                double dy = a.y - a.y;
-                disnt = sqrt(pow(dx,2) + pow(dy,2));
-
-                return disnt;
+                double dy = a.y - b.y;
+                return sqrt(pow(dx,2) + pow(dy,2));
 
                 }
 //========================================
@@ -37,7 +35,7 @@
 
 //===================================
 		std::ostream& operator<<(std::ostream &out, const Point2D &p){
-
+		//out << std::fixed << std::setprecision(5);//Ajjsta precision de los decimales
                 out << "(" <<p.x <<" , " << p.y << ")";
                 return out;
                 //De esta forma cuando lo llamemos mediante std::cout nos imprimira el contenido que hay en out

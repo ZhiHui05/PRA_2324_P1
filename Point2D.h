@@ -12,7 +12,7 @@ class Point2D{
 		Point2D(double x, double y);
 //======================================
 
-		static double distance(const Point2D &a, const Point2D &b);
+		static double distance(const Point2D &a,const Point2D &b) ;
 //========================================
 		// EL operator== nos dice que vamos hacer una comparacion entre los dos Point2D 
 		bool operator==(const Point2D &b) const;
