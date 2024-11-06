@@ -10,6 +10,7 @@ class Point2D{
 		
 		//COnstructor
 		Point2D(double x, double y);
+		Point2D(const Point2D& other);
 //======================================
 
 		static double distance(const Point2D &a,const Point2D &b) ;

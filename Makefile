@@ -29,3 +29,11 @@ bin/testPoint2D: testPoint2D.cpp Point2D.o
 
 Shape.o: Shape.cpp Shape.h
 	g++ -c Shape.cpp
+
+
+bin/testCircle: testCircle.cpp Circle.o Shape.o Point2D.o
+	g++ -c testCircle.cpp -I./Point2D.h
+	mkdir -p bin
+	g++ -o bin/testCircle testCircle.o Circle.o Shape.o Point2D.o
+
+

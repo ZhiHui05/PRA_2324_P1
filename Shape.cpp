@@ -8,8 +8,7 @@
         //std::string Shape::color(solo puede ser de color: red,green, blue )
 	
 	//public:
-	Shape::Shape(){
-	this -> color = "red";	
+	Shape::Shape():color("red"){
 	}
 
 //==========================
@@ -28,7 +27,7 @@
 	}
 //========================
         void Shape::set_color(std::string c){
-	 if( color != "red" || color != "green" || color != "blue"){
+	 if( color != "red" &&  color != "green" && color != "blue"){
         throw std::invalid_argument("Color no valido");
         }
 	this -> color = c;

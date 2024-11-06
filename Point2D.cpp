@@ -5,10 +5,13 @@
 
 
 //COnstructor
-		Point2D::Point2D(double x, double y){
-                this->x=x;
-                this->y=y;
+		Point2D::Point2D(double x, double y) : x(x), y(y){
                 }
+
+		Point2D::Point2D(const Point2D& other) {
+			x = other.x;
+			y = other.y;
+		}
 //======================================
 
                 double Point2D::distance(const Point2D &a,const Point2D &b){
